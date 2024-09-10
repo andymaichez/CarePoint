@@ -9,28 +9,52 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <img src="images/logo.jpg" id="logo" alt="Logo">
-        <h1>C<span style="color: orangered;">a</span>rePoint</h1>
-
-        <nav class="navbar" id="nav-bar">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Doctors</a>
-            <a href="#">Facilities</a>
-            <a href="#">About Us</a>
-        </nav>
-
-        <div class="icons">
-            <div id="menubar" class="fas fa-bars"></div>
-            <a href="#">Contact Us</a>
-            <a href="#">Patient Portal</a>
+    <header>
+        <div class="header-container">
+            <nav class="nav-bg text-white flex items-center justify-between p-4">
+                <div class="flex items-center">
+                    <img src="/images/logo.jpg" alt="Logo" class="h-10" id="imager">
+                    <h1 class="ml-2 text-6xl nav-text">C<span>a</span>reP<span>o</span>int</h1>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">About</a>
+                    <a href="#" class="nav-link">Services</a>
+                    <a href="#" class="nav-link">Doctors</a>
+                    <a href="#" class="nav-link">Facilities</a>
+                    <a href="#" class="nav-link">Careers</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="nav-btn bg-transparent border px-4 py-2 rounded">Login</a>
+                    <a href="#" class="nav-btn bg-transparent border px-4 py-2 rounded">Patient Portal</a>
+                </div>
+                <button class="md:hidden mobile-menu-btn"
+                    onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </nav>
+            <div id="mobileMenu" class="md:hidden fixed top-16 right-0 mobile-menu-bg text-white w-60 p-4 hidden">
+                <a href="#" class="block py-2 mobile-menu-link">Home</a>
+                <a href="#" class="block py-2 mobile-menu-link">About</a>
+                <a href="#" class="block py-2 mobile-menu-link">Services</a>
+                <a href="#" class="block py-2 mobile-menu-link">Doctors</a>
+                <a href="#" class="block py-2 mobile-menu-link">Facilities</a>
+                <a href="#" class="block py-2 mobile-menu-link">Careers</a>
+                <a href="#" class="block py-2 border-t border-gray-600 mt-2 mobile-menu-link">Login</a>
+                <a href="#" class="block py-2 border-t border-gray-600 mt-2 mobile-menu-link">Patient Portal</a>
+            </div>
         </div>
     </header>
+
 
     <div class="hero-section">
         <div class="hero-content">
@@ -266,7 +290,7 @@
         </div>
     </div>
     <div class="steps-section">
-        <h2>Expert Care  <span> Within Reach </span></h2>
+        <h2>Expert Care <span> Within Reach </span></h2>
         <div class="steps-container">
             <div class="step">
                 <i class="fas fa-user-md"></i>
