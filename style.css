@@ -36,9 +36,11 @@ html {
     font-size: 4.5rem;
     padding-left: 1rem;
 }
-.nav-text span{
+
+.nav-text span {
     color: var(--secclr);
 }
+
 .nav-link,
 .mobile-menu-link,
 .nav-btn {
@@ -103,8 +105,48 @@ header {
     background-color: var(--mainclr);
 }
 
-.md\:flex {
-    gap: 1.5rem;
+@media (max-width: 1024px) {
+    .nav-text {
+        font-size: 3.5rem;
+    }
+
+    .nav-link,
+    .mobile-menu-link {
+        font-size: 1.25rem;
+    }
+
+    .nav-btn {
+        font-size: 1.25rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .header-container {
+        padding: 0 2rem;
+    }
+
+    .md\:flex {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-text {
+        font-size: 3rem;
+    }
+
+    .nav-link,
+    .mobile-menu-link {
+        font-size: 1.125rem;
+    }
+
+    .nav-btn {
+        font-size: 1.125rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .header-container {
+        padding: 0 1rem;
+    }
 }
 
 /*Navbar*/
@@ -114,6 +156,7 @@ header {
     background: var(--third);
     display: flex;
     align-items: center;
+    width: auto;
 }
 
 .hero-content {
@@ -252,25 +295,18 @@ header {
     font-size: 1.5rem;
 }
 
-@media (max-width: 1024px) {
-    .hero-content {
-        gap: 15px;
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 4rem 7%;
     }
 
-    .hero-item {
-        flex: 1 1 40rem;
-    }
-}
-
-@media (max-width: 768px) {
     .hero-content {
-        flex-direction: column;
-        gap: 1rem;
+        gap: 5px;
     }
 
     .hero-item {
         width: 100%;
-        text-align: center;
+        padding: 10px;
     }
 
     .hero-text {
@@ -278,88 +314,58 @@ header {
         padding: 0 1rem;
     }
 
-    .hero-text form {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 0;
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
     }
 
     .hero-text input[type="text"] {
-        flex: 1;
-        border: none;
-        border-radius: 4px 0 0 4px;
-        padding: 0.5rem;
         font-size: 1.2rem;
+        padding: 0.5rem;
     }
 
     .hero-text a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-radius: 0 4px 4px 0;
+        font-size: 1rem;
         padding: 0.5rem 1rem;
-        text-decoration: none;
-        background-color: var(--secclr);
-        color: white;
-        font-size: 1.2rem;
-    }
-
-    .button-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
     }
 
     .book-now-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-        text-decoration: none;
-        background-color: var(--secclr);
-        color: white;
-        border: none;
-        border-radius: 4px;
-    }
-
-    .play-video {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
     }
 
     .play-video a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
-        line-height: 50px;
-        border-radius: 50%;
-        background-color: var(--secclr);
-        color: white;
-        text-decoration: none;
     }
 
     .play-video p {
-        margin-left: 0.5rem;
         font-size: 1rem;
-        text-align: left;
+        margin-left: 0.5rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 481px) and (max-width: 1024px) {
     .hero-section {
-        margin: 0 auto;
-        padding: 0;
+        padding: 4rem 7%;
+    }
+
+    .hero-content {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .hero-item {
+        flex: 1 1 45%;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding: 0 1rem;
     }
 
     .hero-text h1 {
@@ -367,37 +373,82 @@ header {
     }
 
     .hero-text p {
-        font-size: 1.4rem;
-    }
-
-    .book-now-button,
-    .play-video a {
         font-size: 1.5rem;
-        padding: 0.75rem 1.5rem;
-    }
-
-    .play-video a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-        line-height: 50px;
-    }
-
-    .play-video p {
-        font-size: 1rem;
-        margin-left: 0.5rem;
     }
 
     .hero-text input[type="text"] {
-        font-size: 1.2rem;
-        padding: 0.5rem;
+        font-size: 1.3rem;
     }
 
     .hero-text a {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+    }
+
+    .book-now-button {
+        font-size: 1.1rem;
+    }
+
+    .play-video a {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .play-video p {
+        font-size: 1.2rem;
     }
 }
+
+@media (min-width: 1200px) {
+    .hero-section {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 4rem 7%;
+    }
+
+    .hero-content {
+        gap: 2rem;
+    }
+
+    .hero-item {
+        flex: 1 1 45%;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.6rem;
+    }
+
+    .hero-text input[type="text"] {
+        font-size: 1.5rem;
+    }
+
+    .hero-text a {
+        font-size: 1.125rem;
+    }
+
+    .book-now-button {
+        font-size: 1.125rem;
+    }
+
+    .play-video a {
+        width: 60px;
+        height: 60px;
+        font-size: 1.0rem;
+    }
+
+    .play-video p {
+        font-size: 1.5rem;
+    }
+}
+
 
 /*Hero section*/
 /*stats section*/
@@ -423,8 +474,15 @@ header {
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: var(--mainclr);
-    margin: 0;
     box-sizing: border-box;
+    margin: 0;
+}
+
+.separator {
+    width: 2px;
+    background: var(--mainclr);
+    height: auto;
+    align-self: stretch;
 }
 
 .stat-heading {
@@ -437,14 +495,9 @@ header {
     font-size: 1.5rem;
 }
 
-.separator {
-    width: 2px;
-    height: 100%;
-}
-
 @media (max-width: 768px) {
     .stats-dashboard {
-        padding: 1rem;
+        padding: 4rem 7%;
     }
 
     .stats-dash {
@@ -467,6 +520,10 @@ header {
 }
 
 @media (max-width: 480px) {
+    .stats-dashboard {
+        padding: 4rem 7%;
+    }
+
     .stat-heading {
         font-size: 2rem;
     }
@@ -523,6 +580,12 @@ header {
     margin: 0 auto;
 }
 
+@media (min-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .service-box {
     padding: 2rem;
     background: white;
@@ -542,7 +605,6 @@ header {
 .service-box p {
     font-size: 1.5rem;
     line-height: 2;
-
 }
 
 .icon-container i {
@@ -564,9 +626,9 @@ header {
     background: var(--mainclr);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .services-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -582,6 +644,7 @@ header {
     }
 }
 
+
 /* best medical services */
 
 /*services overview*/
@@ -593,7 +656,7 @@ header {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 15px;
     justify-content: center;
     align-items: stretch;
@@ -639,6 +702,12 @@ header {
 .service-icon i:hover {
     color: white;
     background: var(--mainclr);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -715,6 +784,12 @@ header {
     color: white;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+    .looking-for-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .looking-for-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -726,6 +801,7 @@ header {
         grid-template-columns: 1fr;
     }
 }
+
 
 /*Are You Looking For*/
 /*Best Doctors Section*/
@@ -937,55 +1013,61 @@ header {
     justify-content: center;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .doctor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .doctor-card {
     position: relative;
     background: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.doctor-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .doctor-info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.8);
-    text-align: center;
+    width: 100%;
 }
 
 .doctor-name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0.5rem 0;
     color: var(--mainclr);
 }
 
-.doctor-profession {
-    font-size: 1rem;
+.doctor-name span {
+    font-size: 1.3rem;
     margin: 0;
     color: var(--secclr);
 }
 
-.doctor-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-    margin-top: 6rem;
-}
-
-.doctor-card:hover .doctor-image {
-    transform: scale(1.05);
+.doctor-track-record {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    text-align: start;
 }
 
 .social-icons {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
     display: flex;
     gap: 0.5rem;
+    margin: 1rem auto;
 }
 
 .social-icon {
@@ -1006,6 +1088,7 @@ header {
     color: white;
     transform: scale(1.1);
 }
+
 
 /* Doctors Section */
 /*Urgent Solutions*/
@@ -1090,11 +1173,12 @@ header {
     }
 
     .urgent-content h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     .urgent-content p {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+        text-align: start;
     }
 
     .urgent-content a {
@@ -1308,7 +1392,7 @@ header {
 
 .register-button {
     display: inline-block;
-    background-color:var(--secclr);
+    background-color: var(--secclr);
     color: #fff;
     font-size: 1.3rem;
     padding: 1.5rem 3rem;
@@ -1438,6 +1522,45 @@ header {
 .inner-footer a:hover {
     margin-left: 10px;
     color: var(--secclr);
+}
+
+.inner-footer {
+    flex: 1 1 200px;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-footer {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+
+    .inner-footer {
+        flex: 1 1 22%;
+        margin-bottom: 0;
+    }
+
+    .inner-footer h2 {
+        font-size: 1.8rem;
+    }
+
+    .inner-footer a {
+        font-size: 1.4rem;
+    }
+
+    .logo-and-text {
+        margin-bottom: 0;
+    }
+
+    .text-content p.description {
+        font-size: 1.4rem;
+    }
+
+    .social-media {
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 768px) {
