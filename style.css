@@ -12,6 +12,8 @@
     box-sizing: border-box;
     transition: .2s;
     text-decoration: none;
+    justify-content: center;
+    align-items: stretch;
 }
 
 html {
