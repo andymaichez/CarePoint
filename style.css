@@ -1280,6 +1280,7 @@ header {
     display: flex;
     gap: 5px;
     margin-bottom: 1rem;
+    justify-content: center;
 }
 
 .testimonial .stars i {
