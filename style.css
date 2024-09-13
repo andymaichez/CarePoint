@@ -13,6 +13,7 @@
     transition: .2s;
     text-decoration: none;
     max-width: 1400px;
+    align-items: start;
 }
 
 html {
