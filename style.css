@@ -871,6 +871,7 @@ header {
     .best-doctors-container {
         flex-direction: column;
         gap: 1.5rem;
+        padding: 0rem 5%;
     }
 
     .best-doctors-info,
@@ -880,11 +881,11 @@ header {
     }
 
     .info-content {
-        padding: 0 1rem;
+        padding: 4rem 2%;
     }
 
     .info-content h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     .info-content p {
@@ -1159,6 +1160,7 @@ header {
     .urgent-container {
         flex-direction: column;
         gap: 1.5rem;
+        padding: 0rem 5%;
     }
 
     .urgent-image,
