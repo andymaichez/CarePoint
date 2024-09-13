@@ -7,14 +7,11 @@
 
 * {
     margin: 0 auto;
-    padding: 0 auto;
+    padding: 0;
     outline: none;
     box-sizing: border-box;
     transition: .2s;
     text-decoration: none;
-    max-width: fit-content;
-    width: 1500px;
-    justify-items: center;
 }
 
 html {
