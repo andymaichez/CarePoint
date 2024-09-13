@@ -12,7 +12,7 @@
     box-sizing: border-box;
     transition: .2s;
     text-decoration: none;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 html {
@@ -674,6 +674,8 @@ header {
     text-align: center;
     color: var(--mainclr);
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .service-item h2 {
@@ -713,7 +715,7 @@ header {
 
 @media (max-width: 768px) {
     .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
 
@@ -722,6 +724,7 @@ header {
         grid-template-columns: 1fr;
     }
 }
+
 
 /*services overview*/
 /*Are you Looking For*/
