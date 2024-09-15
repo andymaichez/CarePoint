@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<section class="main-container">
+
     <header>
         <div class="header-container">
             <nav class="nav-bg text-white flex items-center justify-between p-4">
@@ -28,7 +28,7 @@
                     <a href="#" class="nav-link">Home</a>
                     <a href="#" class="nav-link">About</a>
                     <a href="#" class="nav-link">Services</a>
-                    <a href="#" class="nav-link">Doctors</a>
+                    <a href="#doctors" class="nav-link">Doctors</a>
                     <a href="#" class="nav-link">Facilities</a>
                     <a href="#" class="nav-link">Careers</a>
                 </div>
@@ -58,7 +58,6 @@
         </div>
     </header>
 
-
     <div class="hero-section">
         <div class="hero-content">
             <div class="hero-item">
@@ -71,11 +70,10 @@
                         <input type="text" name="user-email" placeholder="Your Email">
                         <a href="#">Sign Up</a>
                     </form>
-
                     <div class="button-container">
                         <a href="#" class="book-now-button">Get Started</a>
                         <div class="play-video">
-                            <a href="#"><i class="fas fa-play"></i></a>
+                            <a href="#" id="play-button"></a>
                             <p>Virtual Tour</p>
                         </div>
                     </div>
@@ -83,7 +81,9 @@
             </div>
             <div class="hero-item">
                 <div class="hero-image">
-                    <img src="images/chiness.jpg" alt="Doctor consultation">
+                    <video src="/images/hos-video.mp4" id="hosp-video">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
@@ -93,26 +93,27 @@
     <div class="stats-dashboard">
         <div class="stats-dash">
             <div class="stat-item">
-                <div class="stat-heading">65</div>
+                <div class="stat-heading" data-count="65">0</div>
                 <div class="stat-description">Registered Doctors</div>
             </div>
             <div class="separator"></div>
             <div class="stat-item">
-                <div class="stat-heading">500+</div>
+                <div class="stat-heading" data-count="500">0</div>
                 <div class="stat-description">Hospital Beds</div>
             </div>
             <div class="separator"></div>
             <div class="stat-item">
-                <div class="stat-heading">1200+</div>
+                <div class="stat-heading" data-count="1800">0</div>
                 <div class="stat-description">Treated Patients</div>
             </div>
             <div class="separator"></div>
             <div class="stat-item">
-                <div class="stat-heading">24/7</div>
-                <div class="stat-description">Medical Services</div>
+                <div class="stat-heading" data-count="100">0</div>
+                <div class="stat-description">Registered Nurses</div>
             </div>
         </div>
     </div>
+
 
 
     <div class="medical-services">
@@ -210,28 +211,29 @@
         <h1>In Need Of:</h1>
         <div class="looking-for-grid">
             <div class="looking-for-item">
-                <h2>Doctors</h2>
-                <p>Find experienced doctors across various specialties.</p>
+                <h2>Emergency Care</h2>
+                <p>Find immediate assistance and treatment for urgent medical conditions.</p>
                 <a href="#" class="more-info-btn">→</a>
             </div>
             <div class="looking-for-item">
-                <h2>Consult</h2>
-                <p>Schedule consultations with top medical professionals.</p>
+                <h2>Surgical Services</h2>
+                <p>Access a wide range of surgical procedures with top-notch facilities.</p>
                 <a href="#" class="more-info-btn">→</a>
             </div>
             <div class="looking-for-item">
-                <h2>Pharmacy</h2>
-                <p>Access a range of medications and health products.</p>
+                <h2>Rehabilitation Services</h2>
+                <p>Explore comprehensive rehabilitation services to aid and improve quality of life.</p>
                 <a href="#" class="more-info-btn">→</a>
             </div>
             <div class="looking-for-item">
-                <h2>Diagnostics</h2>
-                <p>Get advanced diagnostic tests and imaging services.</p>
+                <h2>Specialized Clinics</h2>
+                <p>Find specialized clinics for specific medical conditions and expert care.</p>
                 <a href="#" class="more-info-btn">→</a>
             </div>
         </div>
     </div>
-    <div class="doctor-section">
+
+    <div class="doctor-section" id="doctors">
         <h1 class="section-title">Meet Our Professional Doctors</h1>
 
         <div class="doctor-grid">
@@ -323,7 +325,7 @@
             </div>
             <div class="step">
                 <i class="fas fa-calendar-check"></i>
-                <h3>Appointments</h3>
+                <h3>Schedule Appointment</h3>
                 <p>Schedule a consultation with your chosen doctor.</p>
             </div>
             <div class="step">
@@ -386,8 +388,16 @@
                     <img src="images/john.avif" alt="John">
                     <div class="author">Peter Spence</div>
                     <div class="role">Software Developer, Tech Space</div>
-                    <p>"CarePoint's exceptional care transformed my health journey, providing personalized treatment that
+                    <p>"CarePoint's exceptional care transformed my health journey, providing personalized treatment
+                        that
                         truly made a difference."</p>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
                 </div>
             </div>
             <div class="testimonial">
@@ -397,6 +407,13 @@
                     <div class="role">Marketing Director, Animal Feeds</div>
                     <p>"Their innovative approach and dedicated team have significantly improved my well-being and peace
                         of mind."</p>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -470,9 +487,54 @@
     </div>
     <!-- Copyright Section -->
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const playButton = document.getElementById('play-button');
+            const video = document.getElementById('hosp-video');
+
+            playButton.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                if (video.paused) {
+                    video.play();
+                    playButton.style.backgroundColor = '#ff5d22';
+                    playButton.style.boxShadow =
+                        'inset 0 0 0 0 rgba(0,0,0,0.2)';
+                } else {
+                    video.pause();
+                    playButton.style.backgroundColor = '#ff5d22';
+                    playButton.style.boxShadow =
+                        'inset 0 0 10px rgba(0,0,0,0.2)';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.stat-heading');
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+
+                    const speed = 200;
+
+                    if (count < target) {
+                        const increment = target / speed;
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        });
+    </script>
 
     <script src="script.js"></script>
-</section>
 </body>
 
 </html>

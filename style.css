@@ -4,10 +4,7 @@
     --third: #DFE4E0;
     --mainafterclr: hsl(167, 81%, 79%);
 }
-.main-container{
-    max-width: 1450px;
-    margin: 0;
-}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,10 +12,12 @@
     box-sizing: border-box;
     transition: .2s;
     text-decoration: none;
+    max-width: 1500px;
 }
 
 html {
     font-size: 62.5%;
+    margin: 0 auto;
 }
 
 /* Navbar section */
@@ -155,7 +154,7 @@ header {
 /*Navbar*/
 /*Hero section*/
 .hero-section {
-    padding: 6rem 7%;
+    padding: 5rem 7%;
     background: var(--third);
     display: flex;
     align-items: center;
@@ -241,8 +240,7 @@ header {
     margin-top: 2rem;
 }
 
-.book-now-button,
-.play-video a {
+.book-now-button {
     display: inline-block;
     text-decoration: none;
     border-radius: 5px;
@@ -269,28 +267,44 @@ header {
     gap: 10px;
 }
 
-.play-video a {
-    background: var(--secclr);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.0rem;
-    line-height: 50px;
-    text-align: center;
-    transition: background 0.3s, transform 0.3s;
+#play-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--secclr);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.play-video a:hover {
-    background: darken(var(--secclr), 10%);
-    transform: scale(1.1);
+#play-button::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.play-video i {
-    margin: 0;
+#play-button:hover {
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#play-button:hover::before {
+    border-left: 15px solid var(--secclr);
+}
+
+.play-video p {
+    margin-left: 10px;
 }
 
 .play-video p {
@@ -457,7 +471,7 @@ header {
 /*stats section*/
 .stats-dashboard {
     background: var(--third);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .stats-dash {
@@ -1282,7 +1296,6 @@ header {
     display: flex;
     gap: 5px;
     margin-bottom: 1rem;
-    justify-content: center;
 }
 
 .testimonial .stars i {
